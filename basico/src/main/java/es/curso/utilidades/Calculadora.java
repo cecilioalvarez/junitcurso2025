@@ -1,4 +1,4 @@
-package es.curso;
+package es.curso.utilidades;
 
 public class Calculadora {
 
@@ -10,6 +10,11 @@ public class Calculadora {
 	public double restar(double a, double b) {
 
 		return a - b;
+	}
+
+	public double multiplicar(int a, int b) {
+		// TODO Auto-generated method stub
+		return a*b;
 	}
 
 }

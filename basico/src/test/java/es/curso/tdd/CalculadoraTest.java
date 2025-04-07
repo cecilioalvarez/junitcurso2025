@@ -3,14 +3,16 @@ package es.curso.tdd;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import es.curso.Calculadora;
+import es.curso.utilidades.Calculadora;
 
 class CalculadoraTest {
 
 	// AAA 
 	@Test
+	@DisplayName("suma dos numeros enteros")
 	void sumarNumerosTest() {
 	
 		//arrange
@@ -26,6 +28,7 @@ class CalculadoraTest {
 	}
 	
 	@Test
+	@DisplayName("resta dos numeros enteros")
 	void restarNumerosTest() {
 	
 		//arrange
@@ -39,5 +42,22 @@ class CalculadoraTest {
 		
 	
 	}
+	
+	@Test
+	@DisplayName("multiplica dos numeros enteros")
+	void multiplicaNumerosTest() {
+	
+		//arrange
+		Calculadora calculadora= new Calculadora();
+		
+		//act
+		double multiplicaNumeros= calculadora.multiplicar(2, 3);
+
+		//assert
+		assertEquals(6,multiplicaNumeros);
+		
+	
+	}
+	
 
 }
