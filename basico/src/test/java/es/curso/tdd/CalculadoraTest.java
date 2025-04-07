@@ -11,17 +11,31 @@ class CalculadoraTest {
 
 	// AAA 
 	@Test
-	void test() {
-		//arrange que se traduciria por preparar
-		Calculadora c= new Calculadora();
+	void sumarNumerosTest() {
+	
+		//arrange
+		Calculadora calculadora= new Calculadora();
 		
-		//act actuar 
+		//act
+		double sumaNumeros= calculadora.sumar(2, 2);
+
+		//assert
+		assertEquals(4,sumaNumeros);
 		
-		double suma= c.sumar(2, 2);
+	
+	}
+	
+	@Test
+	void restarNumerosTest() {
+	
+		//arrange
+		Calculadora calculadora= new Calculadora();
 		
-		// assert confirmar
-		
-		assertEquals(4,suma);
+		//act
+		double sumaNumeros= calculadora.restar(2, 2);
+
+		//assert
+		assertEquals(0,sumaNumeros);
 		
 	
 	}
