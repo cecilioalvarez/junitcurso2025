@@ -60,10 +60,7 @@ public class Nota {
 		} else if (getValor() >= 3 && getValor() < 5) {
 			return Tipo.INSUFICIENTE;
 
-		} else if (getValor() >= 3 && getValor() < 5) {
-			return Tipo.INSUFICIENTE;
-
-		} else if (getValor() >= 5 && getValor() < 7) {
+		}  else if (getValor() >= 5 && getValor() < 7) {
 			return Tipo.BIEN;
 
 		} else if (getValor() >= 7 && getValor() < 9) {

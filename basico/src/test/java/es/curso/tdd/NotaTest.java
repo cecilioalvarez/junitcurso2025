@@ -135,5 +135,30 @@ class NotaTest {
 		
 	}
 	
+	
+	@Test
+	@DisplayName("la nota es insuficiente")
+	void el_Tipo_De_La_Nota_Es_INSUFICIENTE_Test() {
+		
+	//antes practicamente teniamos un assert en cada condicion
+		
+		//porque no aporta porque aporta una funcionalidad 
+		// correcate muy clara
+		
+		Nota notaInsuficiente1= new Nota (3.1,"matematicas");
+		
+		Nota notaInsuficiente2= new Nota (4.9,"matematicas");
+		
+		Nota.Tipo insuficiente1=notaInsuficiente1.getTipo();
+		Nota.Tipo insuficiente2=notaInsuficiente1.getTipo();
+	
+		
+		assertEquals(Nota.Tipo.INSUFICIENTE,insuficiente1);
+		assertEquals(Nota.Tipo.INSUFICIENTE,insuficiente2);
+		
+		
+		
+	}
+	
 
 }

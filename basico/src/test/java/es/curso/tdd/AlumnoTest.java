@@ -43,6 +43,7 @@ class AlumnoTest {
 		
 	}
 	
+	
 	@Test
 	@DisplayName(" calcular nota media")
 	void calcularNotaMediaTest() {
@@ -53,7 +54,11 @@ class AlumnoTest {
 		
 	}
 	
-	public Alumno helperAlumnoCrearConNotas(String nombre, Nota ... notas) {
+	
+	
+	
+	
+	private Alumno helperAlumnoCrearConNotas(String nombre, Nota ... notas) {
 		
 		
 		Alumno alumno= new Alumno(nombre);
@@ -67,6 +72,16 @@ class AlumnoTest {
 		alumno.setLista(lista);
 		
 		return alumno;
+		
+	}
+	@Test
+	@DisplayName("igualdad por nombre entre alumnos")
+	public void igualdadAlumnos() {
+		
+		Alumno pedro = new Alumno("pedro");
+		Alumno pedro2= new Alumno("pedro");
+		
+		assertEquals(pedro,pedro2);
 		
 	}
 
