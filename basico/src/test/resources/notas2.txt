@@ -1,0 +1,7 @@
+/////////////////
+matematicas,7.5,antonio
+lengua,8,antonio
+-----------------
+gema,matematicas,5
+gema,lengua,9
+////////////////

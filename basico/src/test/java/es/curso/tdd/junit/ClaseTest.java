@@ -1,4 +1,4 @@
-package es.curso.tdd;
+package es.curso.tdd.junit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -43,34 +43,6 @@ class ClaseTest {
 		
 	}
 
-	
-
-	@Test
-	@DisplayName(" calcular nota media clase")
-	void calcularNotaMediaTest() {
-		
-		Clase c1= new Clase("1");
-		List<Alumno> lista= new ArrayList<Alumno>();
-		
-		Alumno pedro= new Alumno("pedro");
-		pedro.addNota(new Nota(4,"Matematicas"));
-		pedro.addNota(new Nota(6,"lengua"));
-		
-		Alumno ana= new Alumno("ana");
-		ana.addNota(new Nota(1,"Matematicas"));
-		ana.addNota(new Nota(3,"lengua"));
-		
-		lista.add(pedro);
-		lista.add(ana);
-		
-		c1.setAlumnos(lista);
-		//act 
-		
-		
-		assertEquals(3.5,c1.getMedia());
-		
-	}
-	
 	@Test
 	@DisplayName(" calcular nota media clase")
 	void calcularNotaMediaTest2() {
@@ -88,6 +60,44 @@ class ClaseTest {
 		c1.setAlumnos(lista);
 		//act 
 		assertEquals(3,c1.getMedia());
+		
+	}
+	
+	@Test
+	@DisplayName(" calcular nota mayor de la clase")
+	void calcularNotaMayor() {
+		
+		Clase c1= new Clase("1");
+		List<Alumno> lista= new ArrayList<Alumno>();	
+		
+		
+		//objetos vacios y simulo que devuelven una nota
+		Alumno alumno1= Mockito.mock(Alumno.class);
+		Mockito.when(alumno1.getNotaMayor()).thenReturn(new Nota(8,"matematicas"));
+		
+		Alumno alumno2= Mockito.mock(Alumno.class);
+		Mockito.when(alumno2.getNotaMayor()).thenReturn(new Nota(6,"matematicas"));
+		
+		lista.add(alumno1);
+		lista.add(alumno2);
+		
+		c1.setAlumnos(lista);
+		
+		
+		
+		//act 
+		
+		Nota notaMayor=c1.getMayorNota();
+		
+		
+		//assert
+	
+		//nos dice que vamos a verificar con un spy que ese metodo se ha llamado
+		Mockito.verify(alumno1,Mockito.times(1)).getNotaMayor();
+		Mockito.verify(alumno2,Mockito.times(1)).getNotaMayor();
+		
+		assertEquals(new Nota(8,"matematicas"),notaMayor);
+		
 		
 	}
 
